@@ -84,6 +84,33 @@ namespace VlcControlApp
         }
 
         /// <summary>
+        /// 切断処理を行うメソッド
+        /// </summary>
+        public void DisConnectToVLC () {
+            try
+            {
+                _tcpClient?.Close();
+                if (_tcpClient != null) _tcpClient.Dispose();
+
+                if(_stream != null)
+                {
+                    _stream.Close();
+                    _stream.Dispose();
+                }
+                
+                if(_reader != null)
+                {
+                    _reader.Close();
+                    _reader?.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// vlcにコマンドを送るメソッド
         /// </summary>
         /// <param name="command">コマンド文字列</param>
