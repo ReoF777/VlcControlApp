@@ -24,7 +24,7 @@ namespace VlcControlApp
         }
 
         /// <summary>
-        /// 再生開始
+        /// 動画開始
         /// </summary>
         public void Play () {
             SendCommand("play\n");
@@ -35,14 +35,14 @@ namespace VlcControlApp
         }
 
         /// <summary>
-        /// 再生終了
+        /// 動画一時中断、再生
         /// </summary>
         public void Pouse () {
             SendCommand("pause\n");
         }
 
         /// <summary>
-        /// 再生停止
+        /// 動画終了
         /// </summary>
         public void Stop () {
             SendCommand("stop\n");
@@ -57,7 +57,7 @@ namespace VlcControlApp
         }
 
         /// <summary>
-        /// vlcに音声ファイル設定
+        /// vlcに音声ファイル設定、動画再生開始
         /// </summary>
         /// <param name="filePath"></param>
         public void OpenMovieFile(string filePath) {
